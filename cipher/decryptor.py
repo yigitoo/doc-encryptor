@@ -38,19 +38,12 @@ class Decryptor:
 
             if self.decrypted_data == None:
                 raise NotImplementedError("DECYPTED TEXT IS NONE!!!")
-
-            self.save_it()
             
             return True
         
         except Exception as errors:
             print(f"Errors:\n--------\n{errors}")
             return False
-
-    def save_it(self):
-        file = open('data/out.txt', 'w', encoding='utf-8')
-        file.write(self.decrypted_data)
-        file.close()
 
     def secret_decryptor(self) -> str | None:
         if type(self.file_data) != str:
