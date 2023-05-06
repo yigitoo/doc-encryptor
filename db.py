@@ -1,6 +1,5 @@
 import pymongo
 import certifi
-import logging
 import dotenv
 import os
 config = dotenv.load_dotenv()

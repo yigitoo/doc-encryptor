@@ -1,5 +1,6 @@
 Flask
 python-dotenv
+pymongo
 # pypandoc
 # pypandoc_binary
 # ftfy
