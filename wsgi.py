@@ -16,11 +16,20 @@ from flask import (
 from db import create_client
 import dotenv
 from cipher.decryptor import Decryptor
+import sys
+import os
 import uuid
+
 '''
 @brief: Initiliaze components.
 '''
-app = Flask(__name__, static_folder="gui_static", template_folder='gui_templates')
+if getattr(sys, 'frozen', False):
+    template_folder = os.path.join(sys._MEIPASS, 'templates')
+    static_folder = os.path.join(sys._MEIPASS, 'static')
+    app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
+else:
+    app = Flask(__name__)
+
 app.secret_key = str(uuid.uuid4())
 app.url_map.strict_slashes = False
 users = create_client('users')
