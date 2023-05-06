@@ -5,3 +5,4 @@ data/
 /encryptor.py
 __pycacahe__/
 cipher/
+.vercel
