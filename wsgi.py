@@ -21,6 +21,7 @@ import uuid
 '''
 app = Flask(__name__, static_folder="gui_static", template_folder='gui_templates')
 app.secret_key = str(uuid.uuid4())
+app.url_map.strict_slashes = False
 users = create_client('users')
 config = dotenv.dotenv_values()
 
