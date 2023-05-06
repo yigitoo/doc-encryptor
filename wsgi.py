@@ -24,7 +24,7 @@ app.secret_key = str(uuid.uuid4())
 app.url_map.strict_slashes = False
 users = create_client('users')
 config = dotenv.dotenv_values()
-
+project_name = "EFELER TOPYATAĞI İÇMESUYU ARITMA 2023"
 '''
 @brief: Define this function for getting session_user datas!
 '''
@@ -51,7 +51,7 @@ def get_encrypted_data():
     session_user = get_session_user()
     if request.method == "GET":
         if session_user is not None:
-            return render_template('index.html',user=session_user, project_name="EFELER TOPYATAĞI İÇMESUYU ARITMA 2023")
+            return render_template('index.html', project_name=project_name)
         
         else:
             return redirect('/')
@@ -81,12 +81,4 @@ def login():
             session['user_id'] = user['_id']
             return redirect('/')
 if __name__ == "__main__":
-    app.run('0.0.0.0', port=4455, debug=1)
-
-
-"""window = webview.create_window(
-    "ÜMİT ŞENYURT | ASKİ ELEKTRONİK TEKNİSYENİ",
-    app,
-    fullscreen=True
-)
-webview.start()"""
+    app.run('0.0.0.0', 5000)
