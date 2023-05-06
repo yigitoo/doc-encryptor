@@ -1,5 +1,5 @@
-.env*
 encrypted_data/
+__pycacahe__/
 data/
 /decryptor.py
 /encryptor.py
