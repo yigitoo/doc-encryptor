@@ -1,8 +1,8 @@
 encrypted_data/
-__pycacahe__/
 data/
 /decryptor.py
 /encryptor.py
-__pycacahe__/
+/__pycache__
 cipher/
 .vercel
+__pycache__/
