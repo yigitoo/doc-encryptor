@@ -1,3 +1,7 @@
 .env*
 encrypted_data/
 data/
+/decryptor.py
+/encryptor.py
+__pycacahe__/
+cipher/

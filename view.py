@@ -1,11 +1,20 @@
 import webview
+import keyboard
+import threading
+import sys
+def detect_keys():
+    keys = ['alt', 'alt gr', 'ctrl', 'left alt', 'left ctrl', 'left shift', 'right alt', 'right ctrl', 'right shift', 'shift', 'windows']
+    while True:
+        if keyboard.read_key() in keys:
+            window.destroy()
+            raise SystemExit
 
-url_of_server = "localhost:3000"
+keyboard_event = threading.Thread(target=detect_keys, daemon=True)
+keyboard_event.start()
 
 window = webview.create_window(
-    title = "ÜMİT ŞENYURT | ASKİ ELEKTRONİK TEKNİSYENİ",
-    url = url_of_server,
-    fullscreen=True
-)
+    'EFELER TOPYATAĞI İÇME SUYU ARITMA 2023 | DOKÜMAN İZLEME PANELİ',
+    url="http://localhost:4455",
+    fullscreen=True)
 
 webview.start()

@@ -1,2 +1,6 @@
 Flask
 python-dotenv
+# pypandoc
+# pypandoc_binary
+# ftfy
+# keyboard
