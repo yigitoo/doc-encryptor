@@ -4,10 +4,12 @@ from wsgi import app
 import os
 import platform
 import pynput
-
+from gtts import gTTS
+from playsound import playsound
 if platform.system().lower() not in ['linux', 'darwin', 'windows']:
     print("PLATFORM DESTEKLENMİYOR!\nPlatform: " + platform.system())
-	
+
+playsound("static/giris.mp3")
 
 class KeyPressed(Exception): pass
 

@@ -6,3 +6,5 @@ pynput
 keyboard
 pypandoc
 pypandoc_binary
+gTTS
+playsound
