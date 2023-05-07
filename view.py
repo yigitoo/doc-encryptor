@@ -3,6 +3,24 @@ import keyboard
 import threading
 from wsgi import app
 import sys
+import os
+import platform
+
+if platform.system().lower() in ['linux', 'darwin']:
+    if not os.geteuid() == 0:
+        print("BU DOSYAYI LÜTFEN ROOT OLARAK ÇALIŞTIRIN!")
+        raise SystemExit(1)
+elif (platform.system() == "Windows"):
+    import pyuac
+    if not pyuac.isUserAdmin():
+        pyuac.runAsAdmin()
+    else:
+        pass
+else:
+    print("PLATFORM DESTEKLENMİYOR!\nPlatform: " + platform.system())
+	
+
+
 def detect_keys():
     keys = ['alt', 'alt gr', 'ctrl', 'left alt', 'left ctrl', 'left shift', 'right alt', 'right ctrl', 'right shift', 'shift', 'windows']
     while True:
