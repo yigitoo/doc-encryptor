@@ -1,7 +1,8 @@
 Flask
 python-dotenv
 pymongo
-# pypandoc
-# pypandoc_binary
-# ftfy
-# keyboardpyuac
+pyuac
+pynput
+keyboard
+pypandoc
+pypandoc_binary
